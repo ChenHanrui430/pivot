@@ -11,16 +11,16 @@ on traffic from video playback through Tor Browser. Training data are not includ
 
 ## Installation
 
+Download and extract the repository, then open a terminal in its root directory.
+
 ```bash
-git clone https://github.com/ChenHanrui430/pivot.git
-cd pivot
 uv sync --frozen
 ```
 
 ## Download weights and testsets
 
-[Release v1.0.0](https://github.com/ChenHanrui430/pivot/releases/tag/v1.0.0)
-provides the weights and testsets in `pivot-eval-assets-v1.tar` (about 276 MiB).
+The accompanying `pivot-eval-assets-v1.tar` archive (about 276 MiB) contains
+the weights and testsets for all five scenarios.
 
 | Scenario | Test samples | Classes |
 | --- | ---: | ---: |
@@ -30,16 +30,10 @@ provides the weights and testsets in `pivot-eval-assets-v1.tar` (about 276 MiB).
 | FRONT | 3,600 | 80 |
 | Tamaraw | 3,600 | 80 |
 
-Download and install all five weights and testsets:
+Place the provided archive in the repository root and install it:
 
 ```bash
-uv run --frozen python scripts/manage_assets.py download --repo ChenHanrui430/pivot --tag v1.0.0
-```
-
-Alternatively, download the archive from the Release page and install it locally:
-
-```bash
-uv run --frozen python scripts/manage_assets.py install --archive /path/to/pivot-eval-assets-v1.tar
+uv run --frozen python scripts/manage_assets.py install --archive pivot-eval-assets-v1.tar
 ```
 
 Verify the installed files:
