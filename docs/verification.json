@@ -1,0 +1,92 @@
+{
+  "verification_date": "2026-11-08",
+  "environment": {
+    "python": "3.12.11",
+    "torch": "2.5.1+cu121",
+    "triton": "3.5.0",
+    "gpu": "NVIDIA GeForce RTX 3090 Ti",
+    "precision": "fp32",
+    "float32_matmul_precision": "highest",
+    "padding_multiple": 16
+  },
+  "archived_source_parity": [
+    {
+      "scenario": "closed_world",
+      "max_logit_difference": 0.0,
+      "feature_checks": 12,
+      "strict_state_dict": true
+    },
+    {
+      "scenario": "open_world",
+      "max_logit_difference": 0.0,
+      "feature_checks": 12,
+      "strict_state_dict": true
+    },
+    {
+      "scenario": "wtfpad",
+      "max_logit_difference": 0.0,
+      "feature_checks": 12,
+      "strict_state_dict": true
+    },
+    {
+      "scenario": "front",
+      "max_logit_difference": 0.0,
+      "feature_checks": 12,
+      "strict_state_dict": true
+    },
+    {
+      "scenario": "tamaraw",
+      "max_logit_difference": 0.0,
+      "feature_checks": 12,
+      "strict_state_dict": true
+    }
+  ],
+  "clean_checkout_checks": {
+    "uv_sync_frozen": true,
+    "local_release_install": true,
+    "scenario_integrity_checks": 5,
+    "endpoint_smoke_scenarios": 5,
+    "endpoint_smoke_samples_each": 16,
+    "elapsed_open_world_seconds": [
+      6,
+      30
+    ],
+    "closed_world_duration_ratios": [
+      0.1,
+      1.0
+    ],
+    "baseline_scorer_agrees": true,
+    "malicious_archive_cases_rejected": [
+      "path traversal",
+      "extra training file",
+      "symbolic link"
+    ]
+  },
+  "complete_endpoint_checks": {
+    "closed_world": {
+      "num_samples": 3600,
+      "finite_logits": true,
+      "completed": true
+    },
+    "open_world": {
+      "num_samples": 7200,
+      "finite_logits": true,
+      "completed": true
+    },
+    "wtfpad": {
+      "num_samples": 3600,
+      "finite_logits": true,
+      "completed": true
+    },
+    "front": {
+      "num_samples": 3600,
+      "finite_logits": true,
+      "completed": true
+    },
+    "tamaraw": {
+      "num_samples": 3600,
+      "finite_logits": true,
+      "completed": true
+    }
+  }
+}

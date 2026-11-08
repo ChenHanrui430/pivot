@@ -1,0 +1,2 @@
+# Preserve the exact pinned upstream source bytes and upstream whitespace.
+src/mamba_ssm/** -whitespace

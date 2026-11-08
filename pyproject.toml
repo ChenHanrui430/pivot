@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pivot-eval"
+version = "1.0.0"
+description = "Evaluation-only artifact for PIVOT: Early Video Stream Fingerprinting over Tor"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "torch==2.5.1",
+  "triton==3.5.0",
+  "numpy==2.4.4",
+  "pyarrow==24.0.0",
+  "scikit-learn==1.8.0",
+  "einops==0.8.2",
+  "tqdm==4.67.3",
+]
+
+[project.scripts]
+pivot-eval = "pivot_eval.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pivot_eval", "src/mamba_ssm"]
+
+[tool.uv]
+environments = ["sys_platform == 'linux' and platform_machine == 'x86_64'"]
+override-dependencies = ["triton==3.5.0"]
+
+[[tool.uv.index]]
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu121" }

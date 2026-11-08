@@ -1,0 +1,30 @@
+{
+  "closed_world": {
+    "Precision": 70.18,
+    "Recall": 70.11,
+    "F1-score": 69.87,
+    "Top-1": 70.11,
+    "Top-3": 84.28,
+    "Top-5": 89.03
+  },
+  "open_world": {
+    "Precision": 64.33,
+    "Recall": 66.55,
+    "F1-score": 65.21
+  },
+  "wtfpad": {
+    "Precision": 69.02,
+    "Recall": 68.69,
+    "F1-score": 68.52
+  },
+  "front": {
+    "Precision": 66.69,
+    "Recall": 66.56,
+    "F1-score": 66.37
+  },
+  "tamaraw": {
+    "Precision": 47.48,
+    "Recall": 48.17,
+    "F1-score": 47.14
+  }
+}

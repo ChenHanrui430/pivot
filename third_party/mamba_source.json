@@ -1,0 +1,15 @@
+{
+  "upstream": "https://github.com/state-spaces/mamba",
+  "commit": "33e2849ff046f72d60db8b17dbf47b7c949ff8c1",
+  "scope": "Mamba-3 SISO module and Triton dependencies; minimal package __init__ files avoid unrelated CUDA extensions",
+  "sha256": {
+    "modules/mamba3.py": "930c3dfa04dea8444b1c9ee8b6ac9cbbc7ef492dc5ae1f4c83051ef953eca33c",
+    "ops/triton/layernorm_gated.py": "eb6252e247b90f1c8a75946efbc1a221e0c4da701b6757ddae49f3495cf7a42f",
+    "ops/triton/mamba3/mamba3_siso_combined.py": "410ad57555b5841fba7bd76fdafdc3ddf82741176489c3e3493f5c6f3c0c6012",
+    "ops/triton/mamba3/mamba3_siso_fwd.py": "68d8d0dba0e3913f2e996862603289fd0d7157e7dc57c872e04234be8bb82695",
+    "ops/triton/mamba3/mamba3_siso_bwd.py": "aa1b0aa8f8f7950503adf55220d3feebfea2fe006dc418b5a4e75e1e6842eadc",
+    "ops/triton/mamba3/angle_dt.py": "7d99f8cff37371cfbfe9d4dd36f17a16135fb07f2c6e14add3ad4dd5c0034e2e",
+    "ops/triton/mamba3/utils.py": "9d93fd772c7f256f517e75445261773e469cfeddb8bb76c1f8f16e9feabb3c13",
+    "ops/triton/mamba3/mamba3_mimo_rotary_step.py": "e117b5da3d2ddfcfa66673a88dfd88a6d688100291d3b6a1b0b3c24c82ef79d6"
+  }
+}
