@@ -8,6 +8,9 @@ difference 0.0 in FP32. The checks confirm matching inference outputs on the ins
 
 ## Environment and execution checks
 
+The recommended evaluation GPU is an NVIDIA GeForce RTX 4090 (24 GB).
+The execution record below describes the hardware actually used for verification.
+
 Verified on 2026-11-08 with Python 3.12.11, PyTorch 2.5.1+cu121, Triton 3.5.0,
 FP32, and an RTX 3090 Ti. All five complete endpoint evaluations finished with
 finite logits. The batches were 128 for closed world and defenses, and 48 for

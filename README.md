@@ -23,11 +23,13 @@ no checkpoint selection is performed on the released testsets.
 
 ## Requirements and installation
 
+Recommended hardware: **NVIDIA GeForce RTX 4090 (24 GB VRAM)**.
 Use Linux x86-64 (including WSL2), Python 3.12, UV, and an NVIDIA CUDA GPU.
 The lockfile uses PyTorch 2.5.1 with CUDA 12.1 and Triton 3.5.0, matching the
 source evaluation environment. Use an up-to-date NVIDIA driver compatible with
 CUDA 12.1. CPU, macOS, and Windows-native inference are not supported by these
-Mamba-3 SISO kernels. An RTX 3090 Ti (24 GB) is used for local verification.
+Mamba-3 SISO kernels. The existing local verification used an RTX 3090 Ti
+(24 GB); RTX 4090 is the recommended evaluation GPU.
 Smaller batches can reduce memory demand but may produce numerical differences.
 Allow approximately 10 GB for the Python environment, assets, extracted testsets,
 and caches. Initial kernel compilation takes longer than later evaluations.
@@ -48,11 +50,14 @@ upstream license; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 Clone the repository and run commands from its root. Code/configuration and the
 manifest are in Git. The ten binary files are provided as the release asset
-`pivot-eval-assets-v1.tar` (about 276 MiB). Replace `OWNER/REPOSITORY` with the
-repository hosting this artifact:
+`pivot-eval-assets-v1.tar` (about 276 MiB), available under
+[Releases](https://github.com/Chenhanrui430/PIVOT/releases/tag/v1.0.0).
+The archive contains all five trained checkpoints and their five paired testsets.
+Checkpoint directories in the Git tree contain configuration files; download and
+install the release archive to obtain the model weights:
 
 ```bash
-uv run --frozen python scripts/manage_assets.py download --repo OWNER/REPOSITORY --tag v1.0.0
+uv run --frozen python scripts/manage_assets.py download --repo Chenhanrui430/PIVOT --tag v1.0.0
 uv run --frozen python run_evaluation.py --scenario all --verify-only
 ```
 
